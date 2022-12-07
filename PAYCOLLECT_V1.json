@@ -1,0 +1,50 @@
+{
+	"info": {
+		"_postman_id": "164eff52-286d-4e54-9826-21107cdae05d",
+		"name": "PayCollect v1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15067563"
+	},
+	"item": [
+		{
+			"name": "https://api.uat.payglocal.in/gl/v1/payments/initiate/paycollect",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-gl-auth",
+						"value": "<your-api-key>",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"merchantTxnId\":\"23AEE8CB6B62EE2AF06\",\n  \"paymentData\": {\n    \"totalAmount\": \"100\",\n    \"txnCurrency\": \"INR\"\n  },\n  \"billingData\": {\n      \"emailId\": \"test@test.com\"\n  },\n  \"merchantCallbackURL\":\"<your-callback-url>\"\n}",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.uat.payglocal.in/gl/v1/payments/initiate/paycollect",
+					"protocol": "https",
+					"host": [
+						"api",
+						"uat",
+						"payglocal",
+						"in"
+					],
+					"path": [
+						"gl",
+						"v1",
+						"payments",
+						"initiate",
+						"paycollect"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
