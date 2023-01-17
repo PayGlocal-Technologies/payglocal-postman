@@ -1,0 +1,49 @@
+{
+	"info": {
+		"_postman_id": "8ed225bc-43cd-49ae-bf05-ff3284bff9bd",
+		"name": "Payments-Airline",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15067563"
+	},
+	"item": [
+		{
+			"name": "Payment Initiation API",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-gl-token-external",
+						"value": "<your-generated-token>",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"merchantTxnId\":\"23AEE8CB6B62EE2AF06\",\n  \"paymentData\": {\n    \"totalAmount\": \"100\",\n    \"txnCurrency\": \"INR\",\n    \"cardData\":{\n      \"number\":\"4111111111111111\",\n      \"expiryMonth\":\"05\",\n      \"expiryYear\":\"2026\",\n      \"securityCode\":\"173\"\n    },\n    \"billingData\": {\n        \"firstName\": \"Bruno\",\n        \"lastName\": \"Mars\",\n        \"addressStreet1\": \"Itsy Bitsy Apartments\",\n        \"addressStreet2\": \"Bellandur\",\n        \"addressCity\": \"Bengaluru\",\n        \"addressState\": \"Karnataka\",\n        \"addressPostalCode\": \"560102\",\n        \"addressCountry\": \"IN\",\n        \"emailId\": \"bruno.mars1234@gmail.com\",\n        \"callingCode\": \"+91\",\n        \"phoneNumber\": \"9999999999\"\n    }\n  },\n  \"riskData\":{\n      \"flightData\": {\n          \"agentCode\": \"AG123\",\n          \"agentName\": \"Sam Thomas\",\n          \"reservationCode\": \"ABC123\",\n          \"reservationDate\": \"2022-11-15\",\n          \"passengerData\": [\n              {\n                  \"firstName\": \"Bruno\",\n                  \"lastName\": \"Mars\"\n              }\n          ],\n          \"legData\": [\n              {\n                  \"departureAirportCode\": \"XXX\",\n                  \"arrivalAirportCode\": \"YYY\",\n                  \"carrierCode\": \"ZZ\",\n                  \"flightNumber\": \"111\",\n                  \"departureDate\": \"2022-11-18\",\n                  \"serviceClass\": \"FIRST\"\n              }\n          ]\n      }\n  },\n  \"merchantCallbackURL\":\"https://api.uat.payglocal.in/gl/v1/payments/merchantCallback\"\n}",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.uat.payglocal.in/gl/v1/payments/initiate",
+					"protocol": "https",
+					"host": [
+						"api",
+						"uat",
+						"payglocal",
+						"in"
+					],
+					"path": [
+						"gl",
+						"v1",
+						"payments",
+						"initiate"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
