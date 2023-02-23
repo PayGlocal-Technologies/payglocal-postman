@@ -1,0 +1,152 @@
+{
+	"info": {
+		"_postman_id": "8edfd0b7-f4b3-43f8-8bdc-8ac3f81d86c4",
+		"name": "Payments",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15067563"
+	},
+	"item": [
+		{
+			"name": "PayDirect API",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-gl-token-external",
+						"value": "<jws-token>",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<payment-initiation-request-payload-as-jwe-token>"
+				},
+				"url": {
+					"raw": "https://api.uat.payglocal.in/gl/v1/payments/initiate",
+					"protocol": "https",
+					"host": [
+						"api",
+						"uat",
+						"payglocal",
+						"in"
+					],
+					"path": [
+						"gl",
+						"v1",
+						"payments",
+						"initiate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PayCollect API",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-gl-token-external",
+						"value": "<jws-token>",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<payment-initiation-request-payload-as-jwe-token>"
+				},
+				"url": {
+					"raw": "https://api.uat.payglocal.in/gl/v1/payments/initiate/paycollect",
+					"protocol": "https",
+					"host": [
+						"api",
+						"uat",
+						"payglocal",
+						"in"
+					],
+					"path": [
+						"gl",
+						"v1",
+						"payments",
+						"initiate",
+						"paycollect"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refund API",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-gl-token-external",
+						"value": "<jws-token>",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<jwe-token>"
+				},
+				"url": {
+					"raw": "https://api.uat.payglocal.in/gl/v1/payments/{id}/refund",
+					"protocol": "https",
+					"host": [
+						"api",
+						"uat",
+						"payglocal",
+						"in"
+					],
+					"path": [
+						"gl",
+						"v1",
+						"payments",
+						"{id}",
+						"refund"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Status API",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-gl-token-external",
+						"value": "<jws-token>",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://api.uat.payglocal.in/gl/v1/payments/{id}/status",
+					"protocol": "https",
+					"host": [
+						"api",
+						"uat",
+						"payglocal",
+						"in"
+					],
+					"path": [
+						"gl",
+						"v1",
+						"payments",
+						"{id}",
+						"status"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
